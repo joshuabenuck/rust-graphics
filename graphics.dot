@@ -1,0 +1,104 @@
+digraph {
+    rankdir=LR;
+    node [shape=box, style=filled];
+    // apps
+    node [fillcolor=pink];
+    alacritty;
+    // ui
+    node [fillcolor=lightblue];
+    orbtk;
+    iced;
+    // input
+    node [fillcolor=lightcoral];
+    glium;
+    glutin;
+    sdl2;
+    winit;
+    // game
+    node [fillcolor=green];
+    bevy;
+    amethyst;
+    tetra;
+    coffee;
+    ggez;
+    gate;
+    quicksilver;
+    piston;
+    // 2d
+    node [fillcolor=purple];
+    pixels;
+    minifb;
+    skia;
+    pathfinder;
+    raquote;
+    femtovg;
+    // ecs
+    node [fillcolor=orange];
+    specs;
+    legion;
+    // frameworks
+    node [fillcolor=yellow];
+    opengl;
+    directx;
+    metal;
+    vulkan;
+    // other
+    node [style=solid];
+    winit -> femtovg;
+    glutin -> femtovg;
+    gl_generator -> femtovg;
+    skia -> resvg;
+    skia -> rust_skia;
+    opengl -> skia;
+    directx -> skia;
+    vulkan -> skia;
+    metal -> skia;
+    winit -> glutin;
+    glutin -> glow;
+    opengl -> phosphorus;
+    phosphorus -> glow;
+    glow -> tetra;
+    opengl -> gl_generator;
+    gl_generator -> glium;
+    vulkan -> ash;
+    vulkan -> vulkano;
+    vulkan -> wgpu;
+    metal -> wgpu;
+    bevy;
+    opengl -> gfx;
+    wgpu -> coffee;
+    gfx -> coffee;
+    glow -> iced;
+    glutin -> iced;
+    winit -> iced;
+    metal -> gfx_hal;
+    surfman -> gfx_hal;
+    glow -> gfx_hal;
+    ash -> gfx_hal;
+    gfx_hal -> rendy;
+    gl_generator -> gl;
+    gl -> pathfinder;
+    winit -> ggez;
+    gfx -> ggez;
+    glutin -> ggez;
+    gl -> gate;
+    gl -> golem;
+    golem -> quicksilver;
+    gl -> piston;
+    glium -> piston;
+    // game engines
+    rendy -> amethyst;
+    specs -> amethyst;
+    legion -> amethyst;
+    // ui
+    wgpu -> pixels;
+    winit -> minifb;
+    minifb -> orbtk;
+    raquote -> orbtk;
+    glutin -> orbtk;
+    pathfinder -> orbtk;
+    stdweb -> orbtk;
+    // apps
+    glutin -> alacritty;
+    gl_generator -> alacritty;
+}
